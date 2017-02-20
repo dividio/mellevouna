@@ -52,6 +52,8 @@ export class EjerciciosViewModelService {
     operacion.Titulo = 'Suma';
     operacion.Tipo = 'suma';
     operacion.Ayuda = 'Suma mentalmente y escribe la solución';
+    operacion.NumeroOperaciones = numeroOperaciones;
+    operacion.Dificultad = dificultad;
     for (let i: number = 0; i < 2 * numeroOperaciones + 1; i++) {
       let elemento : string;
       if (i % 2 === 0) {
@@ -78,6 +80,8 @@ export class EjerciciosViewModelService {
     operacion.Titulo = 'Resta';
     operacion.Tipo = 'resta';
     operacion.Ayuda = 'Resta mentalmente y escribe la solución';
+    operacion.NumeroOperaciones = numeroOperaciones;
+    operacion.Dificultad = dificultad;
     for (let i: number = 0; i < 2 * numeroOperaciones + 1; i++) {
       let elemento: string;
       if (i % 2 !== 0) {
@@ -108,6 +112,8 @@ export class EjerciciosViewModelService {
     operacion.Titulo = 'Multiplicación';
     operacion.Tipo = 'multiplicacion';
     operacion.Ayuda = 'Multiplica mentalmente y escribe la solución';
+    operacion.NumeroOperaciones = numeroOperaciones;
+    operacion.Dificultad = dificultad;
     for (let i: number = 0; i < 2 * numeroOperaciones + 1; i++) {
       let elemento: string;
       if (i % 2 !== 0) {

@@ -5,6 +5,8 @@ export class Operacion {
   private ayuda: string;
   private instrucciones: Array<any> = [];
   private resultado: string;
+  private numeroOperaciones: number;
+  private dificultad: number;
 
   constructor() {}
 
@@ -46,5 +48,21 @@ export class Operacion {
 
   public set Resultado(resultado: string) {
     this.resultado = resultado;
+  }
+
+  public get NumeroOperaciones(): string {
+    return this.numeroOperaciones;
+  }
+
+  public set NumeroOperaciones(numeroOperaciones: string) {
+    this.numeroOperaciones = numeroOperaciones;
+  }
+
+  public get Dificultad(): string {
+    return this.dificultad;
+  }
+
+  public set Dificultad(dificultad: string) {
+    this.dificultad = dificultad;
   }
 }
