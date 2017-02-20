@@ -6,6 +6,7 @@ import { Page2 } from '../pages/page2/page2';
 import { RestasPage } from '../pages/restas/restas';
 import { MultiplicacionesPage } from '../pages/multiplicaciones/multiplicaciones';
 import { CalculadoraPage } from '../pages/calculadora/calculadora';
+import { EjerciciosViewModelService } from '../pages/calculadora/ejercicios-view-model.service';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { CalculadoraPage } from '../pages/calculadora/calculadora';
     MultiplicacionesPage,
     CalculadoraPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EjerciciosViewModelService]
 })
 export class AppModule {}

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { EjerciciosViewModelService } from '../calculadora/ejercicios-view-model.service';
+import { CalculadoraPage } from '../calculadora/calculadora';
 
 /*
   Generated class for the Restas page.
@@ -13,10 +15,20 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RestasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams,
+      public ejerciciosViewModelService: EjerciciosViewModelService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestasPage');
   }
 
+  public ejercicio(
+      numeroOperaciones: number,
+      dificultad: number): void {
+    this.ejerciciosViewModelService.nuevoEjercicio(
+        'resta', numeroOperaciones, dificultad);
+    this.navCtrl.push(CalculadoraPage);
+  }
 }
