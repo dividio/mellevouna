@@ -50,19 +50,19 @@ export class Operacion {
     this.resultado = resultado;
   }
 
-  public get NumeroOperaciones(): string {
+  public get NumeroOperaciones(): number {
     return this.numeroOperaciones;
   }
 
-  public set NumeroOperaciones(numeroOperaciones: string) {
+  public set NumeroOperaciones(numeroOperaciones: number) {
     this.numeroOperaciones = numeroOperaciones;
   }
 
-  public get Dificultad(): string {
+  public get Dificultad(): number {
     return this.dificultad;
   }
 
-  public set Dificultad(dificultad: string) {
+  public set Dificultad(dificultad: number) {
     this.dificultad = dificultad;
   }
 }

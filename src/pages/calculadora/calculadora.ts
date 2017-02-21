@@ -30,9 +30,7 @@ export class CalculadoraPage {
       public navParams: NavParams,
       public alertCtrl: AlertController,
       public ejerciciosViewModelService: EjerciciosViewModelService) {
-    this.ejercicio = this.ejerciciosViewModelService.Ejercicio;
-    this.operacion = this.ejercicio.Operaciones.pop();
-    this.resultado = '';
+    this.cargarOperacion();
   }
 
   ionViewDidLoad() {
@@ -134,7 +132,7 @@ export class CalculadoraPage {
           text: 'Repetir',
           handler: () => {
             console.log('Repetir');
-            resultado = '';
+            this.resultado = '';
           }
         },
         {
@@ -168,10 +166,18 @@ export class CalculadoraPage {
       this.operacion.NumeroOperaciones,
       this.operacion.Dificultad
     );
+    this.cargarOperacion();
+  }
+
+  public cargarOperacion(): void {
+    this.ejercicio = this.ejerciciosViewModelService.Ejercicio;
+    this.operacion = this.ejercicio.Operaciones.pop();
+    this.resultado = '';
   }
 
   public salir(): void {
     console.log('Salir');
+    this.navCtrl.pop();
     this.navCtrl.pop();
     this.navCtrl.pop();
   }
