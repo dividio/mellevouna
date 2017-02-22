@@ -55,12 +55,16 @@ export class EjerciciosViewModelService {
     operacion.NumeroOperaciones = numeroOperaciones;
     operacion.Dificultad = dificultad;
     for (let i: number = 0; i < 2 * numeroOperaciones + 1; i++) {
-      let elemento : string;
-      if (i % 2 === 0) {
+      let elemento: string;
+      if (i % 2 !== 0) {
         elemento = '+';
       } else {
-        let numero: number = Math.floor(Math.random()*Math.pow(10, dificultad));
-        resultado = resultado + numero;
+        let numero: number = this.numeroAleatorio(dificultad);
+        if (i == 0) {
+          resultado = numero;
+        } else {
+          resultado = resultado + numero;
+        }
         elemento = (numero || 0).toLocaleString();
       }
       operacion.Instrucciones.push(elemento);
@@ -87,7 +91,7 @@ export class EjerciciosViewModelService {
       if (i % 2 !== 0) {
         elemento = '-';
       } else {
-        let numero: number = Math.floor(Math.random()*Math.pow(10, dificultad));
+        let numero: number = this.numeroAleatorio(dificultad);
         if (i == 0) {
           resultado = numero;
         } else {
@@ -119,7 +123,7 @@ export class EjerciciosViewModelService {
       if (i % 2 !== 0) {
         elemento = 'x';
       } else {
-        let numero: number = Math.floor(Math.random()*Math.pow(10, dificultad));
+        let numero: number = this.numeroAleatorio(dificultad);
         if (i == 0) {
           resultado = numero;
         } else {
@@ -133,5 +137,13 @@ export class EjerciciosViewModelService {
     operacion.Resultado = (resultado  || 0).toLocaleString();
 
     return operacion;
+  }
+
+  private numeroAleatorio(dificultad: number): number {
+    let num: number = Math.floor(Math.random()*Math.pow(10, dificultad));
+    while (num === 0) {
+      num = Math.floor(Math.random()*Math.pow(10, dificultad));
+    }
+    return num;
   }
 }

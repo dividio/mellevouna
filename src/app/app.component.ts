@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { Inicio } from '../pages/inicio/inicio';
-import { Page2 } from '../pages/page2/page2';
+import { SumasPage } from '../pages/sumas/sumas';
 import { RestasPage } from '../pages/restas/restas';
 import { MultiplicacionesPage } from '../pages/multiplicaciones/multiplicaciones';
 import { CalculadoraPage } from '../pages/calculadora/calculadora';
@@ -25,10 +25,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: Inicio },
+      { title: 'Sumas', component: SumasPage },
       { title: 'Restas', component: RestasPage },
-      { title: 'Multiplicaciones', component: MultiplicacionesPage },
-      { title: 'Calculadora', component: CalculadoraPage },
-      { title: 'Page Two', component: Page2 }
+      { title: 'Multiplicaciones', component: MultiplicacionesPage }
     ];
 
   }

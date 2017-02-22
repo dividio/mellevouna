@@ -62,7 +62,7 @@ export class CalculadoraPage {
 
   public cambiarSigno(): void {
     if (this.resultado.length > 0) {
-      let sign: string = this.resultado.substring(0, 0);
+      let sign: string = this.resultado.substring(0, 1);
       if (sign === '-') {
         this.resultado = this.resultado.substring(1, this.resultado.length);
       } else {
@@ -177,8 +177,6 @@ export class CalculadoraPage {
 
   public salir(): void {
     console.log('Salir');
-    this.navCtrl.pop();
-    this.navCtrl.pop();
     this.navCtrl.pop();
   }
 }
